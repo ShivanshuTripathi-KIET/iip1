@@ -1,0 +1,342 @@
+/* Light Theme Colors (Soft Off-White & Fresh Teal) */
+:root {
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-hero: linear-gradient(135deg, #ecfdf5 0%, #f0f9ff 100%);
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent: #0d9488;
+    --accent-hover: #0f766e;
+    --accent-soft: #ccfbf1;
+    --border: #e2e8f0;
+    --shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+/* Soft Dark Mode Colors (Charcoal Slate instead of harsh black) */
+body.dark {
+    --bg-main: #1c1f26;
+    --bg-card: #252932;
+    --bg-hero: linear-gradient(135deg, #1e293b 0%, #1f2d2e 100%);
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #2dd4bf;
+    --accent-hover: #14b8a6;
+    --accent-soft: #134e4a;
+    --border: #333945;
+    --shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--bg-card);
+    padding: 14px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    margin: 0 12px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+#themeBtn {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#themeBtn:hover {
+    border-color: var(--accent);
+}
+
+/* Hero Banner */
+.hero {
+    background: var(--bg-hero);
+    text-align: center;
+    padding: 75px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--accent-soft);
+    color: var(--accent);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 26px auto;
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+.primary-btn {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+body.dark .primary-btn {
+    color: #0f172a;
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.outline-btn {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+}
+
+.outline-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Main Content Layout */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 18px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 14px;
+    color: var(--text-main);
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+}
+
+h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* Education */
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.year {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 16px 0;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tag {
+    background-color: var(--accent-soft);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tag.soft {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.project-card {
+    background-color: var(--bg-main);
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.project-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Contact Form */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+#formStatus {
+    margin-top: 12px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    background-color: var(--bg-card);
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+}
